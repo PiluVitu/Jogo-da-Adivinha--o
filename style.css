@@ -1,0 +1,137 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  background: linear-gradient(107.56deg, #00ddfb 0%, #00709f 100%);
+  text-align: center;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+.questionBox,
+.answerBox {
+  padding: 4.8rem 6.4rem 6.4rem;
+
+  width: min(42.8rem, 90%);
+  height: 27.372rem;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.questionBox {
+  display: grid;
+  gap: 4.8rem;
+}
+.questionBox header {
+  display: grid;
+  gap: 1.6rem;
+}
+.questionBox header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+}
+.questionBox form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.questionBox form input {
+  height: 5.3rem;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+}
+.questionBox form input:nth-child(1) {
+  background: #dce2e9;
+  text-align: center;
+
+  width: 4.8rem;
+  height: 5.3rem;
+  padding: 1.5rem;
+
+  border-radius: 4px 0px 0px 4px;
+
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+}
+.questionBox form input:nth-child(2) {
+  width: 8.2rem;
+  padding: 1.6rem;
+
+  background: #7879f1;
+  border-radius: 0px 4px 4px 0px;
+
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+
+  text-align: center;
+
+  color: #ffffff;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+.questionBox form input:nth-child(2):hover {
+  background: #5151cc;
+}
+
+body .answerBox {
+  height: 23.4rem;
+  width: 42.8rem;
+
+  display: grid;
+  gap: 3.3rem;
+  justify-items: center;
+}
+body .answerBox span {
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 150%;
+}
+body .answerBox input {
+  width: 16.6rem;
+  height: 5.3rem;
+
+  background: #7879f1;
+
+  border-radius: 4px;
+
+  padding: 1.6rem;
+
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+body .answerBox input:hover {
+  background: #5151cc;
+}
+
+.hide {
+  position: fixed;
+  left: 3000px;
+}

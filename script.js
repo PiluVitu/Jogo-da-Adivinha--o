@@ -17,6 +17,8 @@ function handleTryClick(event) {
   if (Number(inputNumber.value) === randomNumber) {
     showHideScreen()
     attemptsMark.innerText = `Acertou em ${xAttempts} tentativas`
+  }else{
+    alert('Você errou, tente novamente')
   }
   inputNumber.value = ''
   xAttempts++

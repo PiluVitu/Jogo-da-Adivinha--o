@@ -18,14 +18,14 @@
         <h1>Jogo da Adivinhação</h1>
         <span>Adivinhe o número entre 0 e 10</span>
       </header>
-      <form class="">
+      <form  class="">
         <input id="inputNumber" type="text" />
-        <input id="sendNumberButton" type="button" value="Tentar" onclick="handleClick()"/>
+        <input id="tryBtn" type="submit" value="Tentar" />
       </form>
     </div>
     <div class="answerBox hide">
       <span id="attemptsMarks">Acertou em 3 tentativas</span>
-      <input type="button" value="Jogar Novamente" onclick="playAgainClick()"/>
+      <input id="resetBtn" type="button" value="Jogar Novamente"/>
     </div>
     <script src="./script.js"></script>
   </body>

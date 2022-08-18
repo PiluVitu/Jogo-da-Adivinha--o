@@ -1,28 +1,39 @@
 const firstScreen = document.querySelector('.questionBox')
 const secondScreen = document.querySelector('.answerBox')
+const tryBtn = document.querySelector('#tryBtn')
+const resetBtn = document.querySelector('#resetBtn')
 let attemptsMark = document.querySelector('#attemptsMarks')
+let inputNumber = document.querySelector('#inputNumber')
+let xAttempts = 1
+let randomNumber = Math.round(Math.random() * 10)
 
-function handleClick() {
-  const randomNumber = Math.round(Math.random() * 10)
-  let xAttempts = 1
-  const inputNumber = Number(document.querySelector('#inputNumber').value)
+tryBtn.addEventListener('click', handleTryClick)
+resetBtn.addEventListener('click', handleResetClick)
+document.addEventListener('keydown',keyReset)
 
-  
+function handleTryClick(event) {
+  event.preventDefault() //Não faça o Padrão
 
-  if (inputNumber === randomNumber) {
-    firstScreen.classList.toggle('hide')
-    secondScreen.classList.toggle('hide')
-    attemptsMark.innerHTML = `Acertou em ${xAttempts} tentativas`
+  if (Number(inputNumber.value) === randomNumber) {
+    showHideScreen()
+    attemptsMark.innerText = `Acertou em ${xAttempts} tentativas`
   }
-
-  console.log(
-    'Que é que há velhinho ' + xAttempts + ' e o num é ' + randomNumber
-  )
+  inputNumber.value = ''
   xAttempts++
 }
 
-function playAgainClick() {
+function handleResetClick() {
+  showHideScreen()
+  xAttempts = 1
+  randomNumber = Math.round(Math.random() * 10)
+}
+
+function showHideScreen() {
   firstScreen.classList.toggle('hide')
   secondScreen.classList.toggle('hide')
-  xAttempts = 1
 }
+function enterReset(e){
+    if ((e.key == 'Enter') && (firstScreen.classList.contains('hide'))) {
+      handleResetClick()
+    }
+    }

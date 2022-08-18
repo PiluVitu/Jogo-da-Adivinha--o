@@ -9,7 +9,7 @@ let randomNumber = Math.round(Math.random() * 10)
 
 tryBtn.addEventListener('click', handleTryClick)
 resetBtn.addEventListener('click', handleResetClick)
-document.addEventListener('keydown',keyReset)
+document.addEventListener('keydown',enterReset)
 
 function handleTryClick(event) {
   event.preventDefault() //Não faça o Padrão

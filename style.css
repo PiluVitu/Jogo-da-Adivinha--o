@@ -131,7 +131,6 @@ body .answerBox input:hover {
   background: #5151cc;
 }
 
-.hide {
-  position: fixed;
-  left: 3000px;
+body .hide {
+  display: none 
 }

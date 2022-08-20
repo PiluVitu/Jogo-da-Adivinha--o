@@ -9,17 +9,11 @@ let randomNumber = Math.round(Math.random() * 10)
 
 tryBtn.addEventListener('click', handleTryClick)
 resetBtn.addEventListener('click', handleResetClick)
-document.addEventListener('keydown',enterReset)
+document.addEventListener('keydown', enterReset)
 
 function handleTryClick(event) {
   event.preventDefault() //Não faça o Padrão
-
-  if (Number(inputNumber.value) === randomNumber) {
-    showHideScreen()
-    attemptsMark.innerText = `Acertou em ${xAttempts} tentativas`
-  }else{
-    alert('Você errou, tente novamente')
-  }
+  validateInputNumber()
   inputNumber.value = ''
   xAttempts++
 }
@@ -34,8 +28,27 @@ function showHideScreen() {
   firstScreen.classList.toggle('hide')
   secondScreen.classList.toggle('hide')
 }
-function enterReset(e){
-    if ((e.key == 'Enter') && (firstScreen.classList.contains('hide'))) {
-      handleResetClick()
-    }
-    }
+
+function enterReset(e) {
+  if (e.key == 'Enter' && firstScreen.classList.contains('hide')) {
+    handleResetClick()
+  }
+}
+
+function validateInputNumber() {
+  if (
+    Number(inputNumber.value) === randomNumber &&
+    !firstScreen.classList.contains('hide')
+  ) {
+    showHideScreen()
+    attemptsMark.innerText = `Acertou em ${xAttempts} tentativas`
+  } else if (inputNumber.value === '') {
+    alert('Insira um número válido')
+  } else if (Number(inputNumber.value) < 0 || Number(inputNumber.value) > 10) {
+    alert('Digite um numero dentro do escopo definido ')
+  } else if (Number(inputNumber.value) != randomNumber) {
+    alert('Você errou, tente novamente')
+  }
+}
+
+aplicattion

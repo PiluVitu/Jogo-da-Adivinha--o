@@ -15,7 +15,7 @@ function handleTryClick(event) {
   event.preventDefault() //Não faça o Padrão
   validateInputNumber()
   inputNumber.value = ''
-  xAttempts++
+  console.log(randomNumber)
 }
 
 function handleResetClick() {
@@ -48,6 +48,8 @@ function validateInputNumber() {
     alert('Digite um numero dentro do escopo definido ')
   } else if (Number(inputNumber.value) != randomNumber) {
     alert('Você errou, tente novamente')
+    xAttempts++
   }
 }
+
 

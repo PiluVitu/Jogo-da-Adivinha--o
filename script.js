@@ -51,4 +51,3 @@ function validateInputNumber() {
   }
 }
 
-aplicattion

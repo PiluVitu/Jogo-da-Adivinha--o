@@ -95,8 +95,6 @@ body {
 
 body .answerBox {
   height: 23.4rem;
-  width: 42.8rem;
-
   display: grid;
   gap: 3.3rem;
   justify-items: center;
@@ -132,5 +130,6 @@ body .answerBox input:hover {
 }
 
 body .hide {
-  display: none 
+  display: none;
 }
+
